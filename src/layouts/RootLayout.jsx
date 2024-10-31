@@ -7,7 +7,11 @@ const RootLayout = () => {
   return (
     <>
       <Navbar />
-      <main>
+      <main
+        style={{
+          height: "100%",
+        }}
+      >
         <Box
           sx={{
             backgroundColor: "black",

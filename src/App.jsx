@@ -3,6 +3,8 @@ import RootLayout from "./layouts/RootLayout";
 import { CssBaseline } from "@mui/material";
 import { lazy, Suspense } from "react";
 import Loader from "./components/ui/Loader";
+import SearchResultsPage from "./pages/SearchResultsPage";
+import MovieDetailsPage from "./pages/MovieDetailsPage";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
 
@@ -14,6 +16,18 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <HomePage />,
+      },
+      {
+        path: "/movie/details/:id",
+        element: <MovieDetailsPage />,
+      },
+      // {
+      //   path: "/tvshows/details/:id",
+      //   element: <DetailsPage />,
+      // },
+      {
+        path: "/results/:title",
+        element: <SearchResultsPage />,
       },
     ],
   },

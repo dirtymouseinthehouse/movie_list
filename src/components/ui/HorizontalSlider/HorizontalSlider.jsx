@@ -14,6 +14,7 @@ import "swiper/css/navigation";
 import "./styles.css";
 import { blueGrey, grey, yellow } from "@mui/material/colors";
 import { Star } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 const HorizontalSlider = ({ data, header, loading }) => {
   const theme = useTheme();
@@ -92,15 +93,23 @@ const HorizontalSlider = ({ data, header, loading }) => {
                       {movie.vote_average}
                     </Typography>
                   </Box>
-                  <Typography
-                    gutterBottom
-                    component="div"
-                    sx={{
-                      fontSize: "16px",
+                  <Link
+                    to={`/movie/details/${movie?.id}`}
+                    style={{
+                      textDecoration: "none",
+                      color: "white",
                     }}
                   >
-                    {movie.title}
-                  </Typography>
+                    <Typography
+                      gutterBottom
+                      component="div"
+                      sx={{
+                        fontSize: "16px",
+                      }}
+                    >
+                      {movie.title}
+                    </Typography>
+                  </Link>
                 </Box>
               </CardContent>
             </Card>
